@@ -42,8 +42,8 @@
             let titleTag = document.querySelector('title');
             let appDataTag = document.querySelector('title + meta');
             
-            console.dir( appDataTag.dataset);
-
+            let site_url = document.querySelector('meta[property="og:url"]').content;
+          
             let dataConfig = {
 
                 repositoriesList: [],
@@ -52,6 +52,7 @@
                 currentISOTimeString: this.getCurrentISOTimeString(),
                 showPPTX: false, 
                 searchText: '',
+                siteUrl: site_url,
                 
                 ...appDataTag.dataset,
                 gitHubToken: atob(appDataTag.dataset.gitHubToken)          
